@@ -289,8 +289,7 @@ class PassiveSkillParser(parser.BaseParser):
                         data['icon'] = '%s (%s)' % (icon[-1], icon[-2])
                 else:
                     data['icon'] = icon[-1]
-
-            data['icon'] = data['icon'].replace('.dds', '')
+                data['icon'] = data['icon'].replace('.dds', '')
 
             stat_ids = []
             values = []

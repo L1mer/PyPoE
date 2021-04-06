@@ -11663,6 +11663,10 @@ specification = Specification({
                 name='Flag5',
                 type='bool',
             ),
+            Field(
+                name='Flag6',
+                type='bool',
+            ),
         ),
     ),
     'ItemCostPerLevel.dat': File(

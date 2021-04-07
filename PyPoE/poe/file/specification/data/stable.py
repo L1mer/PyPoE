@@ -22516,6 +22516,19 @@ specification = Specification({
                 name='HeistChance',
                 type='int',
             ),
+            #3.13
+            Field(
+                name='Key97',
+                type='ref|key',
+            ),
+            Field(
+                name='Unknown110',
+                type='int',
+            ),
+            Field(
+                name='Next',
+                type='ref|string',
+            ),
         ),
     ),
     'WorldPopupIconTypes.dat': File(

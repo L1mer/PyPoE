@@ -147,6 +147,35 @@ class WikiCondition(parser.WikiCondition):
         # prophecies
         'prophecy_objective',
         'prophecy_reward',
+
+        # Quest Rewards
+        'quest_reward1_type',
+        'quest_reward1_quest',
+        'quest_reward1_quest_id',
+        'quest_reward1_act',
+        'quest_reward1_class_ids',
+        'quest_reward1_npc',
+
+        'quest_reward2_type',
+        'quest_reward2_quest',
+        'quest_reward2_quest_id',
+        'quest_reward2_act',
+        'quest_reward2_class_ids',
+        'quest_reward2_npc',
+
+        'quest_reward3_type',
+        'quest_reward3_quest',
+        'quest_reward3_quest_id',
+        'quest_reward3_act',
+        'quest_reward3_class_ids',
+        'quest_reward3_npc',
+
+        'quest_reward4_type',
+        'quest_reward4_quest',
+        'quest_reward4_quest_id',
+        'quest_reward4_act',
+        'quest_reward4_class_ids',
+        'quest_reward4_npc',
     )
     COPY_MATCH = re.compile(
         r'^(upgraded_from_set|implicit[0-9]+_(?:text|random_list)).*'

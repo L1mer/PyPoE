@@ -64,6 +64,9 @@ __all__ = []
 class WikiCondition(parser.WikiCondition):
     COPY_KEYS = (
         'main_page',
+
+        # Temporarily, psg parser doesn't work
+        'connections',
     )
 
     NAME = 'Passive skill'

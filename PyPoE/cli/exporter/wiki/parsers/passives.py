@@ -238,6 +238,7 @@ class PassiveSkillParser(parser.BaseParser):
 
         console('Accessing additional data...')
 
+        """ PSG Parser don't work in 3.13
         psg = PSGFile()
         psg.read(
             file_path_or_raw=self.file_system.get_file(
@@ -253,8 +254,9 @@ class PassiveSkillParser(parser.BaseParser):
         for psg_id, node in node_index.items():
             for other_psg_id in node.connections:
                 node_index[other_psg_id].connections.append(psg_id)
+        """
 
-        self.rr['PassiveSkills.dat'].build_index('PassiveSkillGraphId')
+        self.rr['PassiveSkills.dat']#.build_index('PassiveSkillGraphId')
 
         self._image_init(parsed_args)
 
@@ -335,12 +337,13 @@ class PassiveSkillParser(parser.BaseParser):
                 else:
                     data['stat_text'] = text
 
-            node = node_index.get(passive['PassiveSkillGraphId'])
-            if node and node.connections:
-                data['connections'] = ','.join([
-                    self.rr['PassiveSkills.dat'].index['PassiveSkillGraphId'][
-                        psg_id]['Id'] for psg_id in node.connections])
-
+            # Don't work in 3.13
+            #node = node_index.get(passive['PassiveSkillGraphId'])
+            #if node and node.connections:
+            #    data['connections'] = ','.join([
+            #        self.rr['PassiveSkills.dat'].index['PassiveSkillGraphId'][
+            #            psg_id]['Id'] for psg_id in node.connections])
+            
             # extract icons if specified
             if parsed_args.store_images:
                 fn = data['icon'] + ' passive skill icon'

@@ -466,6 +466,15 @@ specification = Specification({
                 name='Unknown3',
                 type='int',
             ),
+            # 3.14
+            Field(
+                name='Flag5',
+                type='bool',
+            ),
+            Field(
+                name='Flag6',
+                type='bool',
+            ),
         ),
     ),
     'AddBuffToTargetVarieties.dat': File(
@@ -2313,6 +2322,11 @@ specification = Specification({
             # harvest related?
             Field(
                 name='Key1',
+                type='ulong',
+            ),
+            # TODO 3.14
+            Field(
+                name='Key2',
                 type='ulong',
             ),
         ),
@@ -5100,6 +5114,23 @@ specification = Specification({
         fields=(
         ),
     ),
+    'CostTypes.dat': File(
+        fields=(
+            Field(
+                name='Id',
+                type='ref|string'
+            ),
+            Field(
+                name='StatsKey',
+                type='ulong',
+                key='Stats.dat'
+            ),
+            Field(
+                name='FormatText',
+                type='ref|string'
+            )
+        ),
+    ),
     'CraftingBenchCustomActions.dat': File(
         fields=(
         ),
@@ -5251,6 +5282,10 @@ specification = Specification({
                 name='Flag0',
                 type='bool',
             ),
+            Field(
+                name='Unknown2',
+                type='ulong',
+            ),
         ),
         virtual_fields=(
             VirtualField(
@@ -5401,6 +5436,10 @@ specification = Specification({
             Field(
                 name='Keys1',
                 type='ref|list|ulong',
+            ),
+            Field(
+                name='Key2',
+                type='ulong',
             ),
         ),
     ),
@@ -8895,10 +8934,6 @@ specification = Specification({
                 type='int',
             ),
             Field(
-                name='ManaCost',
-                type='int',
-            ),
-            Field(
                 name='DamageEffectiveness',
                 type='int',
                 description='Damage effectiveness based on 0 = 100%',
@@ -8952,12 +8987,6 @@ specification = Specification({
                 name='CooldownGroup',
                 type='int',
             ),
-            # only > 0 for Blasphemy (to 35)
-            Field(
-                name='ManaReservationOverride',
-                type='int',
-                description='Mana Reservation Override: #% (if # > 0)',
-            ),
             Field(
                 name='Unknown37',
                 type='int',
@@ -8972,7 +9001,7 @@ specification = Specification({
                 type='int',
             ),
             Field(
-                name='Unknown46',
+                name='ArtVariation',
                 type='int',
             ),
             Field(
@@ -8982,13 +9011,13 @@ specification = Specification({
                 enum='STAT_INTERPOLATION_TYPES',
             ),
             Field(
+                name='Unknown46',
+                type='int',
+            ),
+            Field(
                 name='VaalSoulGainPreventionTime',
                 type='int',
                 description='Time in milliseconds',
-            ),
-            Field(
-                name='Unknown47',
-                type='int',
             ),
             Field(
                 name='BaseDuration',
@@ -8996,6 +9025,39 @@ specification = Specification({
             ),
             Field(
                 name='AttackSpeedMultiplier',
+                type='int',
+            ),
+            Field(
+                name='Unknown47',
+                type='int',
+            ),
+            Field(
+                name='CostAmounts',
+                type='ref|list|int',
+            ),
+            Field(
+                name='CostTypesKeys',
+                type='ref|list|ulong',
+                key='CostTypes.dat'
+            ),
+            Field(
+                name='ManaReservationFlat',
+                type='int',
+            ),
+            Field(
+                name='ManaReservationPercent',
+                type='int',
+            ),
+            Field(
+                name='LifeReservationFlat',
+                type='int',
+            ),
+            Field(
+                name='LifeReservationPercent',
+                type='int',
+            ),
+            Field(
+                name='Unknown48',
                 type='int',
             ),
         ),
@@ -9018,6 +9080,11 @@ specification = Specification({
             VirtualField(
                 name='Stats',
                 fields=('StatsKeys', 'StatValues'),
+                zip=True,
+            ),
+            VirtualField(
+                name='Costs',
+                fields=('CostTypesKeys', 'CostAmounts'),
                 zip=True,
             ),
         ),
@@ -11585,48 +11652,16 @@ specification = Specification({
                 type='int',
             ),
             Field(
-                name='Elder_TagsKey',
-                type='ulong',
-                key='Tags.dat',
-            ),
-            Field(
-                name='Shaper_TagsKey',
-                type='ulong',
-                key='Tags.dat',
-            ),
-            Field(
-                name='Flag0',
+                name='RemovedIfLeavesArea',
                 type='bool',
             ),
             Field(
-                name='AchievementItemsKeys',
+                name='Keys0',
                 type='ref|list|ulong',
-                key='AchievementItems.dat',
             ),
             Field(
-                name='Identify_AchievementItemsKeys',
+                name='Keys1',
                 type='ref|list|ulong',
-                key='AchievementItems.dat',
-            ),
-            Field(
-                name='Crusader_TagsKey',
-                type='ulong',
-                key='Tags.dat',
-            ),
-            Field(
-                name='Eyrie_TagsKey',
-                type='ulong',
-                key='Tags.dat',
-            ),
-            Field(
-                name='Basilisk_TagsKey',
-                type='ulong',
-                key='Tags.dat',
-            ),
-            Field(
-                name='Adjudicator_TagsKey',
-                type='ulong',
-                key='Tags.dat',
             ),
             # 3.11
             Field(
@@ -11649,15 +11684,9 @@ specification = Specification({
                 name='Unknown2',
                 type='int',
             ),
-            #3.12
             Field(
                 name='Flag4',
                 type='bool',
-            ),
-            # TODO 3.13
-            Field(
-                name='Unknown3',
-                type='int',
             ),
             Field(
                 name='Flag5',
@@ -11666,6 +11695,26 @@ specification = Specification({
             Field(
                 name='Flag6',
                 type='bool',
+            ),
+            Field(
+                name='Flag7',
+                type='bool',
+            ),
+            Field(
+                name='Flag8',
+                type='bool',
+            ),
+            Field(
+                name='Flag9',
+                type='bool',
+            ),
+            Field(
+                name='Flag10',
+                type='bool',
+            ),
+            Field(
+                name='Key2',
+                type='ulong',
             ),
         ),
     ),
@@ -14826,11 +14875,6 @@ specification = Specification({
                 type='ref|list|ulong',
                 key='ModSellPriceTypes.dat',
             ),
-            Field(
-                name='TagsKeys',
-                type='ref|list|ulong',
-                key='Tags.dat',
-            ),
         ),
     ),
     'Mods.dat': File(
@@ -14841,7 +14885,7 @@ specification = Specification({
                 unique=True,
             ),
             Field(
-                name='Unknown0',
+                name='Hash',
                 type='int',
             ),
             Field(
@@ -15038,11 +15082,6 @@ specification = Specification({
                 type='byte',
             ),
             Field(
-                name='Unveil_AchievementItemsKey',
-                type='ulong',
-                key='AchievementItems.dat',
-            ),
-            Field(
                 name='Keys0',
                 type='ref|list|ulong',
             ),
@@ -15064,6 +15103,7 @@ specification = Specification({
             Field(
                 name='Keys1',
                 type='ref|list|ulong',
+                key='GrantedEffectsPerLevel.dat',
             ),
             # 3.12.2
             Field(
@@ -15092,10 +15132,14 @@ specification = Specification({
                 name='Heist_AddStatValue2',
                 type='int',
             ),
-            # TODO 3.13
             Field(
-                name='Unknown4',
+                name='InfluenceTypes',
                 type='int',
+            ),
+            Field(
+                name='ImplicitTagsKeys',
+                type='ref|list|ulong',
+                key='Tags.dat',
             ),
         ),
         virtual_fields=(
@@ -15193,35 +15237,6 @@ specification = Specification({
             Field(
                 name='StatValues',
                 type='ref|list|int',
-            ),
-        ),
-    ),
-    'MonsterConditionalEffectPacks.dat': File(
-        fields=(
-            Field(
-                name='Id',
-                type='ref|string',
-                unique=True,
-            ),
-            Field(
-                name='Keys0',
-                type='ref|list|ulong',
-            ),
-            Field(
-                name='Keys1',
-                type='ref|list|ulong',
-            ),
-            Field(
-                name='Data0',
-                type='ref|list|int',
-            ),
-            Field(
-                name='Data1',
-                type='ref|list|int',
-            ),
-            Field(
-                name='Unknown0',
-                type='int',
             ),
         ),
     ),
@@ -16497,22 +16512,35 @@ specification = Specification({
             ),
             # 3.11
             Field(
-                name='Unknown104',
-                type='int',
+                name='EPKFile',
+                type='ref|string',
             ),
             # 3.12
             Field(
-                name='Unknown105',
+                name='Unknown104',
                 type='int',
             ),
             Field(
-                name='Key3',
+                name='MonsterConditionalEffectPacksKey',
                 type='ulong',
             ),
             # TODO 3.13
             Field(
                 name='Flag6',
-                type='byte',
+                type='bool',
+            ),
+            # TODO 3.14
+            Field(
+                name='Flag7',
+                type='bool',
+            ),
+            Field(
+                name='Unknown105',
+                type='int',
+            ),
+            Field(
+                name='Flag8',
+                type='bool',
             ),
         ),
     ),
@@ -17425,6 +17453,10 @@ specification = Specification({
                 name='Unknown5',
                 type='int',
             ),
+            Field(
+                name='Unknown6',
+                type='int',
+            ),
         ),
     ),
     'NearbyMonsterConditions.dat': File(
@@ -17750,41 +17782,6 @@ specification = Specification({
             ),
         ),
     ),
-    'PassiveSkillBuffs.dat': File(
-        fields=(
-            Field(
-                name='Id',
-                type='ref|string',
-                unique=True,
-            ),
-            Field(
-                name='BuffDefinitionsKey',
-                type='ulong',
-                key='BuffDefinitions.dat',
-            ),
-            Field(
-                name='Buff_StatValues',
-                type='ref|list|int',
-            ),
-            Field(
-                name='Key1',
-                type='ulong',
-            ),
-            Field(
-                name='Unknown4',
-                type='int',
-            ),
-            Field(
-                name='Unknown5',
-                type='ref|list|int',
-            ),
-            # 3.10
-            Field(
-                name='Unknown2',
-                type='ref|list|int',
-            ),
-        ),
-    ),
     'PassiveSkillFilterCatagories.dat': File(
         fields=(
             Field(
@@ -17984,7 +17981,6 @@ specification = Specification({
             Field(
                 name='PassiveSkillBuffsKeys',
                 type='ref|list|ulong',
-                key='PassiveSkillBuffs.dat',
             ),
             Field(
                 name='GrantedEffectsPerLevelKey',
@@ -18475,12 +18471,16 @@ specification = Specification({
             ),
             # TODO 3.13
             Field(
-                name='Unknown14',
-                type='int',
+                name='Keys0',
+                type='ref|list|ulong',
             ),
             Field(
-                name='Unknown15',
-                type='int',
+                name='Key3',
+                type='ulong',
+            ),
+            Field(
+                name='Flag5',
+                type='bool',
             ),
         ),
     ),
@@ -19012,10 +19012,9 @@ specification = Specification({
                 name='Rank',
                 type='int',
             ),
-            # TODO 3.13
             Field(
-                name='Unknown0',
-                type='int',
+                name='Key0',
+                type='ulong',
             ),
         ),
     ),
@@ -20218,7 +20217,7 @@ specification = Specification({
             ),
             # 3.9.0
             Field(
-                name='Flag10',
+                name='IsValueUsed',
                 type='bool',
             ),
             # TODO 3.13
@@ -22515,19 +22514,6 @@ specification = Specification({
             Field(
                 name='HeistChance',
                 type='int',
-            ),
-            #3.13
-            Field(
-                name='Key97',
-                type='ref|key',
-            ),
-            Field(
-                name='Unknown110',
-                type='int',
-            ),
-            Field(
-                name='Next',
-                type='ref|string',
             ),
         ),
     ),

@@ -710,6 +710,7 @@ class MOD_DOMAIN(IntEnumOverride):
     HEIST_TRINKET = 24
     UNKNOWN4 = 25
     UNDEFINED = 26
+    UNDEFINED = 27
 
     # legacy names
     MASTER = CRAFTED

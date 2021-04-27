@@ -6528,6 +6528,10 @@ specification = Specification({
                 name='Unknown8',
                 type='int',
             ),
+            Field(
+                name='Unknown9',
+                type='int',
+            ),
         ),
     ),
     'DelveMonsterSpawners.dat': File(
@@ -14217,6 +14221,10 @@ specification = Specification({
             ),
             Field(
                 name='HeistTier',
+                type='int',
+            ),
+            Field(
+                name='EchoesOfTheAtlasTier',
                 type='int',
             ),
         ),

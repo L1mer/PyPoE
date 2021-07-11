@@ -1,15 +1,15 @@
 """
-Wiki gems exporter
+Wiki Item exporter
 
 Overview
 ===============================================================================
 
 +----------+------------------------------------------------------------------+
-| Path     | PyPoE/cli/exporter/wiki/parsers/gems.py                          |
+| Path     | PyPoE/cli/exporter/wiki/parsers/item.py                          |
 +----------+------------------------------------------------------------------+
 | Version  | 1.0.0a0                                                          |
 +----------+------------------------------------------------------------------+
-| Revision | $Id$                  |
+| Revision | $Id: $                  |
 +----------+------------------------------------------------------------------+
 | Author   | Omega_K2                                                         |
 +----------+------------------------------------------------------------------+
@@ -666,7 +666,27 @@ class ItemsParser(SkillParserShared):
             # Hideout Doodads
             # =================================================================
 
-            'Metadata/Items/Hideout/HideoutLightningCoil': " (hideout doodad)",
+            'Metadata/Items/Hideout/HideoutLightningCoil': " (hideout decoration)",
+            'Metadata/Items/Hideout/HideoutRitualTotem' : " (hideout decoration)",
+            'Metadata/Items/Hideout/HideoutCharredSkeleton' : " (hideout decoration)",
+            'Metadata/Items/Hideout/HideoutVaalWhispySmoke' : " (hideout decoration)",
+
+
+            # =================================================================
+            # invitations
+            # =================================================================
+
+            'Metadata/Items/MapFragments/Maven/MavenMapOutsideBottomRight5': " (10 bosses)",
+            'Metadata/Items/MapFragments/Maven/MavenMapOutsideBottomLeft5': " (10 bosses)",
+            'Metadata/Items/MapFragments/Maven/MavenMapOutsideTopLeft5': " (10 bosses)",
+            'Metadata/Items/MapFragments/Maven/MavenMapOutsideTopRight5': " (10 bosses)",
+            'Metadata/Items/MapFragments/Maven/MavenMapInsideBottomRight5': " (10 bosses)",
+            'Metadata/Items/MapFragments/Maven/MavenMapInsideBottomLeft5': " (10 bosses)",
+            'Metadata/Items/MapFragments/Maven/MavenMapInsideTopLeft5': " (10 bosses)",
+            'Metadata/Items/MapFragments/Maven/MavenMapInsideTopRight5': " (10 bosses)",
+
+
+
             # =================================================================
             # Piece
             # =================================================================
@@ -730,21 +750,25 @@ class ItemsParser(SkillParserShared):
                 ' (3x2)',
             'Metadata/Items/MicrotransactionCurrency/MysteryBox3x3':
                 ' (3x3)',
-            'Metadata/Items/MicrotransactionItemEffects/Microtransaction'
-            'IronMaiden': '',
-            'Metadata/Items/MicrotransactionItemEffects/Microtransaction'
-            'InfernalAxe': ' (Weapon Skin)',
-            'Metadata/Items/MicrotransactionItemEffects/Microtransaction'
-            'ColossusSword': '',
-            'Metadata/Items/MicrotransactionItemEffects/Microtransaction'
-            'LegionBoots': ' (microtransaction)',
-            'Metadata/Items/MicrotransactionItemEffects/Microtransaction'
-            'LegionGloves': ' (microtransaction)',
-            'Metadata/Items/MicrotransactionItemEffects/Microtransaction'
-            'ScholarBoots': ' (microtransaction)',
-            'Metadata/Items/Pets/DemonLion': ' (Pet)',
-            'Metadata/Items/MicrotransactionItemEffects/MicrotransactionHooded'
-            'Cloak': ' (microtransaction)',
+            'Metadata/Items/MicrotransactionItemEffects/MicrotransactionArcaneCloak' :
+                ' (microtransaction)',
+            'Metadata/Items/MicrotransactionItemEffects/MicrotransactionIronMaiden':
+                ' (microtransaction)',
+            'Metadata/Items/MicrotransactionItemEffects/Microtransaction/InfernalAxe':
+                ' (microtransaction)',
+            'Metadata/Items/MicrotransactionItemEffects/Microtransaction/ColossusSword':
+                ' (microtransaction)',
+            'Metadata/Items/MicrotransactionItemEffects/Microtransaction/LegionBoots':
+                ' (microtransaction)',
+            'Metadata/Items/MicrotransactionItemEffects/Microtransaction/LegionGloves':
+               ' (microtransaction)',
+            'Metadata/Items/MicrotransactionItemEffects/Microtransaction/ScholarBoots':
+                ' (microtransaction)',
+            'Metadata/Items/Pets/DemonLion': ' (pet)',
+            'Metadata/Items/MicrotransactionItemEffects/MicrotransactionHooded/Cloak':
+                ' (microtransaction)',
+            'Metadata/Items/MicrotransactionItemEffects/MicrotransactionHoodedCloak' :
+                ' (microtransaction)',
             # =================================================================
             # Quest items
             # =================================================================
@@ -756,26 +780,11 @@ class ItemsParser(SkillParserShared):
                 ' (3 of 4)',
             'Metadata/Items/QuestItems/GoldenPages/Page4':
                 ' (4 of 4)',
-            'Metadata/Items/QuestItems/MapUpgrades/MapUpgradeTier8_1':
-                ' (1 of 2)',
-            'Metadata/Items/QuestItems/MapUpgrades/MapUpgradeTier8_2':
-                ' (2 of 2)',
-            'Metadata/Items/QuestItems/MapUpgrades/MapUpgradeTier9_1':
-                ' (1 of 3)',
-            'Metadata/Items/QuestItems/MapUpgrades/MapUpgradeTier9_2':
-                ' (2 of 3)',
-            'Metadata/Items/QuestItems/MapUpgrades/MapUpgradeTier9_3':
-                ' (3 of 3)',
-            'Metadata/Items/QuestItems/MapUpgrades/MapUpgradeTier10_1':
-                ' (1 of 3)',
-            'Metadata/Items/QuestItems/MapUpgrades/MapUpgradeTier10_2':
-                ' (2 of 3)',
-            'Metadata/Items/QuestItems/MapUpgrades/MapUpgradeTier10_3':
-                ' (3 of 3)',
+
             # =================================================================
             # Misc
             # =================================================================
-            'Metadata/Items/Heist/HeistEquipmentCloak3': '',
+            "Metadata/Items/Heist/HeistEquipmentCloak3": '',
         },
         'Russian': {
             # =================================================================
@@ -1316,6 +1325,7 @@ class ItemsParser(SkillParserShared):
         'Metadata/Items/Gems/SkillGemWandTeleport',
         'Metadata/Items/Gems/SkillGemNewPhaseRun',
         'Metadata/Items/Gems/SkillGemNewArcticArmour',
+        'Metadata/Items/Gems/SkillGemFlammableShot',
 
         #
         # Support Skill Gems
@@ -1597,6 +1607,9 @@ class ItemsParser(SkillParserShared):
         'Metadata/Items/Heist/HeistEquipmentWeaponTest',
         'Metadata/Items/Heist/HeistEquipmentUtilityTest',
         'Metadata/Items/Heist/HeistEquipmentRewardTest',
+        'Metadata/Items/Weapons/OneHandWeapons/Daggers/EtherealBlade1',
+        'Metadata/Items/ItemEffects/SekhemasBanner',
+        'Metadata/Items/Armours/BodyArmours/BodyStrTemp',
     }
 
     _attribute_map = OrderedDict((

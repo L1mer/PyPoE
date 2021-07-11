@@ -784,7 +784,7 @@ class ItemsParser(SkillParserShared):
             # =================================================================
             # Misc
             # =================================================================
-            "Metadata/Items/Heist/HeistEquipmentCloak3": '',
+            'Metadata/Items/Heist/HeistEquipmentCloak3': '',
         },
         'Russian': {
             # =================================================================

@@ -765,8 +765,6 @@ class ItemsParser(SkillParserShared):
             'Metadata/Items/MicrotransactionItemEffects/Microtransaction/ScholarBoots':
                 ' (microtransaction)',
             'Metadata/Items/Pets/DemonLion': ' (pet)',
-            'Metadata/Items/MicrotransactionItemEffects/MicrotransactionHooded/Cloak':
-                ' (microtransaction)',
             'Metadata/Items/MicrotransactionItemEffects/MicrotransactionHoodedCloak' :
                 ' (microtransaction)',
             # =================================================================
@@ -1370,6 +1368,10 @@ class ItemsParser(SkillParserShared):
         'Metadata/Items/MicrotransactionItemEffects/MicrotransactionDemonhandClaw',
         'Metadata/Items/MicrotransactionItemEffects/MicrotransactionDivineShield',
         'Metadata/Items/MicrotransactionItemEffects/MicrotransactionEldritchWings',
+        'Metadata/Items/MicrotransactionItemEffects/MicrotransactionGreenLichHelmet',
+        'Metadata/Items/MicrotransactionItemEffects/MicrotransactionGreenLichBodyArmour',
+        'Metadata/Items/MicrotransactionItemEffects/MicrotransactionGreenLichGloves',
+        'Metadata/Items/MicrotransactionItemEffects/MicrotransactionGreenLichBoots',
 
         'Metadata/Items/MicrotransactionCharacterEffects/MicrotransactionTencent1Frame',
         'Metadata/Items/MicrotransactionCharacterEffects/MicrotransactionTencent2Frame',

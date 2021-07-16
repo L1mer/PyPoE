@@ -1372,6 +1372,7 @@ class ItemsParser(SkillParserShared):
         'Metadata/Items/MicrotransactionItemEffects/MicrotransactionGreenLichBodyArmour',
         'Metadata/Items/MicrotransactionItemEffects/MicrotransactionGreenLichGloves',
         'Metadata/Items/MicrotransactionItemEffects/MicrotransactionGreenLichBoots',
+        'Metadata/Items/MicrotransactionItemEffects/MicrotransactionGreenLichCloak',
 
         'Metadata/Items/MicrotransactionCharacterEffects/MicrotransactionTencent1Frame',
         'Metadata/Items/MicrotransactionCharacterEffects/MicrotransactionTencent2Frame',
@@ -1564,7 +1565,9 @@ class ItemsParser(SkillParserShared):
         'Metadata/Items/Hideout/HideoutTotemPole19Test',
         'Metadata/Items/Hideout/HideoutTotemPole20Test',
         'Metadata/Items/Hideout/HideoutTotemPole21Test',
-
+        'Metadata/Items/Hideout/HideoutTotemPole22Test',
+        'Metadata/Items/Hideout/HideoutTotemPole23Test',
+        
         #
         # Stackable currency
         #
